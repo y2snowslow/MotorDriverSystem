@@ -12,10 +12,19 @@
 byte bldc_step = 0, motor_speed;
 unsigned int i;
 void setup() {
-  DDRD  |= 0x38;           // Configure pins 3, 4 and 5 as outputs
-  PORTD  = 0x00;
-  DDRB  |= 0x0E;           // Configure pins 9, 10 and 11 as outputs
-  PORTB  = 0x31;
+  //DDRD  |= 0x38;           // Configure pins 3, 4 and 5 as outputs
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  PORTD  = 0x00;           //  All PORTD pin as LOW level
+
+  //DDRB  |= 0x0E;           // Configure pins 9, 10 and 11 as outputs
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(11, OUTPUT);
+  PORTB  = 0x31;          // except pin 9,10,11 and quartz as HighLevel.
+
+  //16bit Timer
   // Timer1 module setting: set clock source to clkI/O / 1 (no prescaling)
   TCCR1A = 0;
   TCCR1B = 0x01;
