@@ -16,6 +16,7 @@ void setup() {
   pinMode(3, OUTPUT);
   pinMode(4, OUTPUT);
   pinMode(5, OUTPUT);
+  //check for IR2301 
   PORTD  = 0x00;           //  All PORTD pin as LOW level
 
   //DDRB  |= 0x0E;           // Configure pins 9, 10 and 11 as outputs
@@ -25,7 +26,7 @@ void setup() {
   PORTB  = 0x31;          // except pin 9,10,11 and quartz as HighLevel.
 
   //16bit Timer
-  // Timer1 module setting: set clock source to clkI/O / 1 (no prescaling)
+  // Timer1 module setting: set clock source to clkI/O / 1 (no prescaling) :16MHz count
   TCCR1A = 0;
   TCCR1B = 0x01;
   // Timer2 module setting: set clock source to clkI/O / 1 (no prescaling)
@@ -36,6 +37,7 @@ void setup() {
   pinMode(SPEED_UP,   INPUT_PULLUP);
   pinMode(SPEED_DOWN, INPUT_PULLUP);
 }
+
 // Analog comparator ISR
 ISR (ANALOG_COMP_vect) {
   // BEMF debounce
