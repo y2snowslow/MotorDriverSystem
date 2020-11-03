@@ -1,0 +1,5 @@
+{
+    "board": "arduino:avr:uno",
+    "sketch": "AruinoUno_PWMTest.ino",
+    "port": "COM5"
+}

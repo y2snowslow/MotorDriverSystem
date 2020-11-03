@@ -18,6 +18,10 @@ void setup() {
   pinMode(5, OUTPUT);
   //check for IR2301 
   PORTD  = 0x00;           //  All PORTD pin as LOW level
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,HIGH);
+
 
   //DDRB  |= 0x0E;           // Configure pins 9, 10 and 11 as outputs
   pinMode(9, OUTPUT);
